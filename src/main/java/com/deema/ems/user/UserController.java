@@ -1,5 +1,7 @@
 package com.deema.ems.user;
 
+import com.deema.ems.AuthenticationResponse;
+import com.deema.ems.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +17,22 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/login")
-    public ResponseEntity<Object> login(@RequestBody UserLoginRequest loginRequest) {
-        UserDTO user = userService.findByUsername(loginRequest.getUsername());
-        return ResponseEntity.ok(user);
-    }
+    @Autowired
+    private AuthenticationService authenticationService;
+
+//    @PostMapping("/login")
+//    public ResponseEntity<Object> login(@RequestBody UserLoginRequest loginRequest) {
+//        try {
+//            // Authenticate the user and generate a token
+//            String token = authenticationService.authenticate(loginRequest.getUsername(), loginRequest.getPassword());
+//
+//            // Return the token
+//            return ResponseEntity.ok(new AuthenticationResponse(token));
+//        } catch (Exception e) {
+//            // Handle authentication failure
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
+//        }
+//    }
 
     @GetMapping
     public ResponseEntity<List<UserDTO>> getAllUsers() {
