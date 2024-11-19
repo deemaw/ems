@@ -87,21 +87,17 @@
             <version>6.3.4</version>
         </dependency>
         <!-- JJWT API -->
-<!--        <dependency>-->
-<!--            <groupId>io.jsonwebtoken</groupId>-->
-<!--            <artifactId>jjwt-api</artifactId>-->
-<!--            <version>0.11.5</version>-->
-<!--        </dependency>-->
-
-        <!-- JJWT Implementation -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.11.5</version>
+        </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
-            <version>0.11.5</version>
-            <scope>runtime</scope> <!-- Only needed at runtime -->
+            <version>0.12.6</version>
+            <scope>runtime</scope>
         </dependency>
-
-        <!-- JJWT Jackson (for JSON parsing) -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
