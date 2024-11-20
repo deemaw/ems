@@ -12,7 +12,7 @@ import java.util.Date;
 @Service
 public class AuthenticationService {
 
-    private static final String SECRET_KEY = "cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b-exmpl";
+    private static final String SECRET_KEY = "";
     private static final long EXPIRATION_TIME = 864_000_000; // 10 days
 
     @Autowired
