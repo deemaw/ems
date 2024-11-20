@@ -9,6 +9,6 @@ public class StudentDTO {
     private Long id;
     private String username;
     private String email;
-    private int age;
-    private String course;
+    private String studentId;
+    private String grade;
 }

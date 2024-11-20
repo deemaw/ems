@@ -18,18 +18,22 @@ public class AuthenticationService {
     @Autowired
     private UserRepository userRepository;
 
-    public String authenticate(String username, String password) {
-        // Validate user credentials (you should retrieve the user from the database)
+    public AuthenticationResponse authenticate(String username, String password) {
+        // Validate user credentials
         User user = userRepository.findByUsername(username);
-        if (user == null || !user.getPassword().equals(password)) {
+        if (user == null ||  !user.getPassword().equals(password)) {
             throw new RuntimeException("Invalid username or password");
         }
 
         // Generate JWT token
-        return Jwts.builder()
+        String token = Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
+                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .compact();
+
+        // Return AuthenticationResponse
+        return new AuthenticationResponse(token, user.getRoles());
     }
 }
