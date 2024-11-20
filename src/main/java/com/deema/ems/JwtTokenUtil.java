@@ -11,8 +11,7 @@ import java.util.Date;
 @Component
 public class JwtTokenUtil {
 
-    private static final String SECRET_KEY = "your-secret-key"; // Replace with a secure key in production
-
+    private static final String SECRET_KEY = "cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b-exple";
     // Validate token
     public boolean validateToken(String token) {
         try {
