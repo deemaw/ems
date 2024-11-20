@@ -39,8 +39,4 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
-//    public List<Student> getStudentsByTeacher(Long teacherId) {
-//        // Custom method to find students by teacher
-//        return studentRepository.findStudentsByTeacherId(teacherId);
-//    }
 }

@@ -1,9 +1,9 @@
 package com.deema.ems.teacher;
 
 import jakarta.transaction.Transactional;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.modelmapper.ModelMapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,9 +18,7 @@ public class TeacherService {
 
     public List<TeacherDTO> getAllTeachers() {
         List<Teacher> teachers = teacherRepository.findAll();
-        return teachers.stream()
-                .map(this::convertToDto)
-                .collect(Collectors.toList());
+        return teachers.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
     private TeacherDTO convertToDto(Teacher teacher) {
@@ -39,6 +37,5 @@ public class TeacherService {
     public void deleteTeacher(Long id) {
         teacherRepository.deleteById(id);
     }
-
 }
 
