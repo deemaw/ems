@@ -1,6 +1,7 @@
 package com.deema.ems.timetable;
 
 import com.deema.ems.teacher.Teacher;
+import com.deema.ems.teacher.TeacherDTO;
 import lombok.Getter;
 import lombok.Setter;
 
